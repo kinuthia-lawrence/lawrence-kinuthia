@@ -78,13 +78,6 @@ const Hero: React.FC = () => (
   </section>
 );
 
-// Add this keyframe animation to your global CSS
-// @keyframes float {
-//   0%, 100% { transform: translateY(0px); }
-//   50% { transform: translateY(-10px); }
-// }
-// .animate-float {
-//   animation: float 4s ease-in-out infinite;
-// }
+
 
 export default Hero;

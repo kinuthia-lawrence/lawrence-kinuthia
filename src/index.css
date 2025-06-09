@@ -8,3 +8,24 @@ html, body {
   box-sizing: border-box; 
   background-color: #000000; 
 }
+
+@keyframes float {
+   0%, 100% { transform: translateY(0px); }
+   50% { transform: translateY(-10px); }
+ }
+ .animate-float {
+   animation: float 4s ease-in-out infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
