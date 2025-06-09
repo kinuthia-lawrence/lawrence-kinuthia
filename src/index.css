@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+/* Global Styles */
+html, body {
+  overscroll-behavior: none; /* Prevents the bounce effect in all directions */
+  overflow-x: hidden; 
+  max-width: 100vw; 
+  box-sizing: border-box; 
+  background-color: #000000; 
+}
