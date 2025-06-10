@@ -97,7 +97,7 @@ const Stack = () => {
   ];
 
   return (
-    <section className="py-8 px-4 bg-black/30 backdrop-blur-sm overflow-hidden">
+    <section className="py-4 px-4 bg-black/30 backdrop-blur-sm overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-1 text-center">
           <div className="inline-block px-4 py-1 bg-green-900/30 rounded-full">

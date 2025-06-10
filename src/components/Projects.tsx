@@ -1,5 +1,68 @@
-import { Github, GithubIcon, Link } from "lucide-react";
-import React from "react";
+import { GithubIcon, Link } from "lucide-react";
+import React, { type ReactElement } from "react";
+import {
+  FaReact,
+  FaJava,
+  FaNodeJs,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaDocker,
+  FaGitAlt,
+} from "react-icons/fa";
+import {
+  SiFirebase,
+  SiMongodb,
+  SiPostgresql,
+  SiGraphql,
+  SiFlutter,
+  SiKotlin,
+  SiSpring,
+  SiVite,
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiXml,
+  SiJetpackcompose,
+} from "react-icons/si";
+
+// Icon mapping for project tags
+const tagIcons: Record<string, ReactElement> = {
+  // Languages
+  Java: <FaJava className="text-orange-500" />,
+  JavaScript: <FaJs className="text-yellow-400" />,
+  TypeScript: <SiTypescript className="text-blue-500" />,
+  Python: <FaHtml5 className="text-blue-500" />,
+  Kotlin: <SiKotlin className="text-purple-500" />,
+
+  // Frameworks & Libraries
+  React: <FaReact className="text-blue-400" />,
+  "Next.js": <SiNextdotjs className="text-white" />,
+  Tailwind: <SiTailwindcss className="text-cyan-400" />,
+  "Node.js": <FaNodeJs className="text-green-600" />,
+  Flutter: <SiFlutter className="text-blue-400" />,
+  Spring: <SiSpring className="text-green-500" />,
+  Javafx: <FaJava className="text-blue-300" />,
+  Fxml: <SiXml className="text-orange-400" />,
+  Vite: <SiVite className="text-purple-400" />,
+  "Jetpack Compose": <SiJetpackcompose className="text-purple-600" />,
+  XML: <SiXml className="text-orange-400" />,
+
+  // Databases
+  MongoDB: <SiMongodb className="text-green-500" />,
+  PostgreSQL: <SiPostgresql className="text-blue-500" />,
+  Firebase: <SiFirebase className="text-yellow-500" />,
+  GraphQL: <SiGraphql className="text-pink-500" />,
+
+  // Others
+  Docker: <FaDocker className="text-blue-400" />,
+  Git: <FaGitAlt className="text-orange-600" />,
+  HTML: <FaHtml5 className="text-orange-500" />,
+  CSS: <FaCss3Alt className="text-blue-500" />,
+};
+
+// Maximum number of tags to display
+const MAX_TAGS_DISPLAY = 3;
 
 interface Project {
   title: string;
@@ -37,13 +100,39 @@ const projects: Project[] = [
     hoverLabel: "Desktop Hotkey Manager App",
     codeLink: "#",
   },
+    {
+    title: "SnapTap 1",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    tags: ["Java", "Javafx", "Fxml", "Java", "Javafx", "Java", "Javafx"],
+    year: "2025",
+    status: "live",
+    coverImage: "/Backgroundless.png",
+    hoverLabel: "Hotkey Manager Platform",
+    liveLink: "#",
+    codeLink: "#",
+  },
+  {
+    title: "SnapTap 2",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    tags: ["Java2", "Javafx2", "Java2", "Javafx2", "Java2", "Javafx2"],
+    year: "2025",
+    status: "development",
+    coverImage: "/snaptap2.png",
+    hoverLabel: "Desktop Hotkey Manager App",
+    codeLink: "#",
+  },
 ];
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+  const displayTags = project.tags.slice(0, MAX_TAGS_DISPLAY);
+  const hasMoreTags = project.tags.length > MAX_TAGS_DISPLAY;
+  const extraTagsCount = project.tags.length - MAX_TAGS_DISPLAY;
   return (
     <div className="bg-[#1e1e1e] rounded-4xl overflow-hidden shadow-md relative group hover:opacity-70 border border-gray-800 transition-all duration-300">
       <div
-        className="relative h-70 bg-cover bg-center"
+        className="relative h-80 bg-cover bg-center bg-black"
         style={{ backgroundImage: `url(${project.coverImage})` }}
       >
         <div className="absolute top-2 left-2 bg-black opacity-50 text-white text-xs px-3 py-1 rounded-full">
@@ -65,25 +154,33 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         </div>
       </div>
 
-      <div className="p-5">
-        <h3 className="text-xl font-semibold text-white mb-2">
+      <div className="p-5 relative">
+        <h3 className="text-xl font-semibold text-white mb-4">
           {project.title}
         </h3>
         <p className="text-gray-300 text-sm mb-4">{project.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map((tag) => (
+          {displayTags.map((tag) => (
             <span
               key={tag}
-              className="bg-gray-600 border border-gray-400  text-white text-xs px-3 py-1 rounded-full"
+              className="bg-gray-700 border border-gray-500  text-white text-xs px-3 py-1 rounded-full flex items-center"
             >
+              {tagIcons[tag] ? (
+                <span className="mr-1.5">{tagIcons[tag]}</span>
+              ) : null}
               {tag}
             </span>
           ))}
+          {hasMoreTags && (
+            <span className="bg-gray-600 border border-gray-400 text-white text-xs px-3 py-1 rounded-full flex items-center">
+              +{extraTagsCount}
+            </span>
+          )}
         </div>
 
         <div
-          className={`flex w-full justify-evenly gap-4 transition-opacity duration-300 opacity-100 md:opacity-0 md:hidden group-hover:opacity-100 group-hover:md:flex           
+          className={`flex w-full justify-evenly gap-4 transition-all duration-300 opacity-100 md:absolute md:bottom-6.75 md:left-4 md:right-4 md:pr-8 md:hidden group-hover:opacity-90 group-hover:md:flex
           `}
         >
           {project.codeLink && (
@@ -120,9 +217,9 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 const Projects: React.FC = () => (
   <section
     id="projects"
-    className="py-8 px-8 md:px-38 bg-black min-h-screen flex flex-col items-center"
+    className="p-4 md:px-38 bg-black min-h-screen flex flex-col items-center justify-center"
   >
-    <h2 className="text-4xl font-bold text-white mb-2">Featured Projects</h2>
+    <h2 className="text-3xl md:text-4xl flex  font-bold text-white mb-2">Featured Projects</h2>
     <p className="text-gray-400 text-lg max-w-2xl text-center mb-2">
       A curated collection of my digital creations, each telling a unique story
       of innovation, problem-solving, and technical excellence. Hover to explore
@@ -134,7 +231,7 @@ const Projects: React.FC = () => (
       can find SOME of them in my github
     </p>
     <div className="px-16 h-px bg-gradient-to-r from-gray-500 via-white to-gray-500 my-8"></div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
       {projects.map((project) => (
         <ProjectCard key={project.title} project={project} />
       ))}

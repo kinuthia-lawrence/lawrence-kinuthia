@@ -1,13 +1,13 @@
 import { Instagram, Twitter, Github } from "lucide-react";
 const Hero: React.FC = () => (
-  <section className="relative md:h-[97vh] overflow-hidden md:pl-36 pt-8 px-10 md:px-24 flex items-center">
+  <section className="relative md:h-[85vh] overflow-hidden md:pl-36 pt-10 md:pt-4 px-4 md:px-24 flex items-center">
     {/* Background decorative elements */}
     <div className="absolute top-20 left-10 w-72 h-72 bg-green-500 rounded-full filter blur-[120px] opacity-20"></div>
     <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-500 rounded-full filter blur-[120px] opacity-10"></div>
 
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       {/* Content column */}
-      <div className="flex flex-col justify-center space-y-4 md:not-visited:space-y-8">
+      <div className="flex flex-col justify-center space-y-2 md:space-y-4 md:not-visited:space-y-8">
         <div className="space-y-3">
           {/* Role badge with hover effect */}
           <div className="relative inline-flex group p-0.5">
@@ -22,7 +22,7 @@ const Hero: React.FC = () => (
             </div>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-bold mt-4 mb-4 leading-tight">
+          <h1 className="text-2xl sm:text-4xl font-bold mt-2 mb-1 md:mt-4 md:mb-4 leading-tight">
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-transparent">
               Lawrence K.
@@ -34,7 +34,7 @@ const Hero: React.FC = () => (
           </p>
         </div>
                 {/* Call to action buttons */}
-        <div className="flex space-x-5 pt-4">
+        <div className="flex space-x-5 pt-2 md:pt-4">
           {/* Hire Me button with gradient */}
           <div className="relative group flex items-center justify-center p-0.5">
             {/* Outer border with animation */}
@@ -65,7 +65,7 @@ const Hero: React.FC = () => (
         </div>
 
         {/* Social links */}
-        <div className="flex items-center space-x-6 pt-6 ">
+        <div className="flex items-center space-x-6 pt-4 md:pt-6 ">
           <div className="text-gray-400 text-sm">Connect with me</div>
           <div className="h-px bg-gray-700 flex-grow"></div>
           <a
@@ -99,7 +99,7 @@ const Hero: React.FC = () => (
           <img
             src="/larrybgless.png"
             alt="Lawrence K."
-            className="object-cover max-h-[600px] filter drop-shadow-2xl rounded-2xl"
+            className="object-cover max-h-[380px] md:max-h-[600px] filter drop-shadow-2xl rounded-2xl"
           />
 
           {/* Decorative elements */}
