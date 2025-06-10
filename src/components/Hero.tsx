@@ -73,19 +73,22 @@ const Hero: React.FC = () => (
           <div className="text-gray-400 text-sm">Connect with me</div>
           <div className="h-px bg-gray-700 flex-grow"></div>
           <a
-            href="#"
+            href="https://www.instagram.com/larrykin343/"
+            target="_blank"
             className="text-gray-400 hover:text-white transition-colors"
           >
             <Instagram className="w-5 h-5" />
           </a>
           <a
-            href="#"
+            href="https://x.com/Larrykin343"
+            target="_blank"
             className="text-gray-400 hover:text-white transition-colors"
           >
             <Twitter className="w-5 h-5" />
           </a>
           <a
-            href="#"
+            href="https://github.com/kinuthia-lawrence"
+            target="_blank"
             className="text-gray-400 hover:text-white transition-colors"
           >
             <Github className="w-5 h-5" />
