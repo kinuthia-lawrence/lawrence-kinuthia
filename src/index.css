@@ -29,3 +29,6 @@ html, body {
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
+.social-link {
+  @apply flex flex-col items-center transition-transform hover:-translate-y-1 duration-300 w-full;
+}
