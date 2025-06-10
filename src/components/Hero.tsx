@@ -20,6 +20,10 @@ const Hero: React.FC = () => (
                 SOFTWARE DEVELOPER
               </span>
             </div>
+            {/* Version superscript */}
+            <div className="absolute -top-6 -right-12">
+              <span className="text-xs text-gray-600 font-mono">v1.0.0</span>
+            </div>
           </div>
 
           <h1 className="text-2xl sm:text-4xl font-bold mt-2 mb-1 md:mt-4 md:mb-4 leading-tight">
@@ -33,13 +37,13 @@ const Hero: React.FC = () => (
             Programming languages and Tech Skills.
           </p>
         </div>
-                {/* Call to action buttons */}
+        {/* Call to action buttons */}
         <div className="flex space-x-5 pt-2 md:pt-4">
           {/* Hire Me button with gradient */}
           <div className="relative group flex items-center justify-center p-0.5">
             {/* Outer border with animation */}
             <div className="absolute inset-0 border-2 border-green-500 rounded-full opacity-60 group-hover:opacity-100 transition-all duration-300"></div>
-            
+
             {/* Inner button with gradient */}
             <a
               href="#contact"
@@ -48,12 +52,12 @@ const Hero: React.FC = () => (
               Hire Me
             </a>
           </div>
-          
+
           {/* GitHub button with white border */}
           <div className="relative group flex items-center justify-center p-0.5">
             {/* Outer border with animation */}
             <div className="absolute inset-0 border-2 border-green-500 rounded-full opacity-60 group-hover:opacity-100 transition-all duration-300"></div>
-            
+
             {/* Inner button with white border */}
             <a
               href="https://github.com/yourprofile"

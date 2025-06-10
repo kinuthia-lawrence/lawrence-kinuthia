@@ -100,7 +100,7 @@ const projects: Project[] = [
     hoverLabel: "Desktop Hotkey Manager App",
     codeLink: "#",
   },
-    {
+  {
     title: "SnapTap 1",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
@@ -131,10 +131,17 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   const extraTagsCount = project.tags.length - MAX_TAGS_DISPLAY;
   return (
     <div className="bg-[#1e1e1e] rounded-4xl overflow-hidden shadow-md relative group hover:opacity-70 border border-gray-800 transition-all duration-300">
-      <div
-        className="relative h-80 bg-cover bg-center bg-black"
-        style={{ backgroundImage: `url(${project.coverImage})` }}
-      >
+      <div className="relative h-80 overflow-hidden">
+        {/* Background image with hover effect */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-black transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-3"
+          style={{ backgroundImage: `url(${project.coverImage})` }}
+        ></div>
+
+        {/*overlay to enhance the effect */}
+        <div className="absolute inset-0 bg-black opacity-20 group-hover:opacity-0 transition-opacity duration-500"></div>
+
+        {/* Status badges */}
         <div className="absolute top-2 left-2 bg-black opacity-50 text-white text-xs px-3 py-1 rounded-full">
           {project.year || "Year"}
         </div>
@@ -147,6 +154,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           {project.status || "Status"}
         </div>
 
+        {/* Hover label */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
           <span className="text-black text-sm bg-white px-4 py-2 rounded-full backdrop-blur-md">
             {project.hoverLabel || "Corporate Website"}
@@ -219,7 +227,9 @@ const Projects: React.FC = () => (
     id="projects"
     className="p-4 md:px-38 bg-black min-h-screen flex flex-col items-center justify-center"
   >
-    <h2 className="text-3xl md:text-4xl flex  font-bold text-white mb-2">Featured Projects</h2>
+    <h2 className="text-3xl md:text-4xl flex  font-bold text-white mb-2">
+      Featured Projects
+    </h2>
     <p className="text-gray-400 text-lg max-w-2xl text-center mb-2">
       A curated collection of my digital creations, each telling a unique story
       of innovation, problem-solving, and technical excellence. Hover to explore
