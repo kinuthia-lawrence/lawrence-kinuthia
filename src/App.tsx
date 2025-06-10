@@ -9,7 +9,7 @@ import "./index.css";
 function App() {
   return (
     <>
-      <div className="w-full bg-black text-gray-200">
+      <div className="w-full bg-black text-gray-200 font-serif">
         <CustomCursor />
         <Hero />
         <Stack />

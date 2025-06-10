@@ -27,7 +27,42 @@ html, body {
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 5s linear infinite;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px)); 
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(calc(-50% - 12px)); 
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.infinite-scroll-left {
+  animation: scroll-left 15s linear infinite;
+  width: fit-content;
+  display: flex;
+}
+
+.infinite-scroll-right {
+  animation: scroll-right 50s linear infinite;
+  width: fit-content;
+  display: flex;
+}
+
+/* Optional: Pause animation on hover */
+.infinite-scroll-left:hover,
+.infinite-scroll-right:hover {
+  animation-play-state: paused;
 }
 .social-link {
   @apply flex flex-col items-center transition-transform hover:-translate-y-1 duration-300 w-full;
