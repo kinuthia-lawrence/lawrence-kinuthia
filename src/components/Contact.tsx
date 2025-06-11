@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  FaLinkedin,
-  FaGithub,
-  FaTwitter,
   FaEnvelope,
-  FaWhatsapp,
+  FaGithub,
+  FaLinkedin,
+  FaWhatsapp
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Contact: React.FC = () => {
   const email = "kinuthialawrence343@gmail.com";
@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
                         className="flex items-center space-x-3 p-3 rounded-lg bg-gray-800 hover:bg-blue-900/30 transition-colors group"
                       >
                         <div className="w-8 h-8 flex items-center justify-center">
-                          <FaTwitter className="text-xl group-hover:text-blue-400" />
+                          <FaXTwitter className="text-xl group-hover:text-blue-400" />
                         </div>
                         <span className="text-sm text-gray-300 group-hover:text-blue-400">
                           @Larrykin343

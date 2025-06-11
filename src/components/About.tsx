@@ -2,19 +2,20 @@ import React from "react";
 import {
   FaEnvelope,
   FaGithub,
+  FaGlobe,
   FaLinkedin,
   FaWhatsapp,
-  FaGlobe,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const About: React.FC = () => (
-  <section id="about" className="relative py-24 px-8 bg-black/90 text-white overflow-hidden">
+  <section id="about" className="relative pt-24 pb-8 px-4 md:px-36 bg-black/90 text-white overflow-hidden">
     {/* Background decorative elements */}
     <div className="absolute top-40 left-10 w-72 h-72 bg-green-500 rounded-full filter blur-[150px] opacity-10"></div>
     <div className="absolute bottom-40 right-10 w-64 h-64 bg-blue-500 rounded-full filter blur-[130px] opacity-10"></div>
     
-    <div className="max-w-6xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+    <div className="max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
         {/* Left column: Profile image and branding */}
         <div className="md:col-span-3 flex flex-col items-center md:items-start">
           <div className="relative group">
@@ -31,7 +32,7 @@ const About: React.FC = () => (
           
           <div className="mt-6 text-center md:text-left">
             <div className="font-bold text-xl text-white">
-              Larry<span className="text-black bg-white px-1 ml-0.5">kin</span>
+              Larr<span className="text-black bg-white px-1 ml-0.5">ykin</span>
             </div>
             <p className="text-green-400 font-medium text-sm mt-1">All in one dev solutions</p>
           </div>
@@ -59,7 +60,7 @@ const About: React.FC = () => (
         {/* Right column: Social links and copyright */}
         <div className="md:col-span-4 flex flex-col items-center md:items-end gap-8">
           {/* Social links with double borders */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             <a href="#" className="social-link group">
               <div className="relative">
                 {/* Outer border */}
@@ -72,7 +73,7 @@ const About: React.FC = () => (
               <span className="mt-1 text-xs text-center block text-gray-400 group-hover:text-green-400 transition-colors duration-300">Portfolio</span>
             </a>
             
-            <a href="mailto:example@email.com" className="social-link group">
+            <a href="mailto:kinuthialawrence343@gmail.com" target="_blank" className="social-link group">
               <div className="relative">
                 {/* Outer border */}
                 <div className="absolute inset-0 border-2 border-green-500 rounded-lg opacity-60 group-hover:opacity-100 transition-all duration-300"></div>
@@ -84,7 +85,7 @@ const About: React.FC = () => (
               <span className="mt-1 text-xs text-center block text-gray-400 group-hover:text-green-400 transition-colors duration-300">Email</span>
             </a>
             
-            <a href="#" className="social-link group">
+            <a href="https://github.com/kinuthia-lawrence" target="_blank" className="social-link group">
               <div className="relative">
                 {/* Outer border */}
                 <div className="absolute inset-0 border-2 border-green-500 rounded-lg opacity-60 group-hover:opacity-100 transition-all duration-300"></div>
@@ -96,7 +97,7 @@ const About: React.FC = () => (
               <span className="mt-1 text-xs text-center block text-gray-400 group-hover:text-green-400 transition-colors duration-300">GitHub</span>
             </a>
             
-            <a href="#" className="social-link group">
+            <a href="https://www.linkedin.com/in/kinuthia-lawrence-b0374324a/" target="_blank" className="social-link group">
               <div className="relative">
                 {/* Outer border */}
                 <div className="absolute inset-0 border-2 border-green-500 rounded-lg opacity-60 group-hover:opacity-100 transition-all duration-300"></div>
@@ -108,7 +109,7 @@ const About: React.FC = () => (
               <span className="mt-1 text-xs text-center block text-gray-400 group-hover:text-green-400 transition-colors duration-300">LinkedIn</span>
             </a>
             
-            <a href="#" className="social-link group">
+            <a href="https://wa.me/message/IHXTOP6QANKBG1" target="_blank" className="social-link group">
               <div className="relative">
                 {/* Outer border */}
                 <div className="absolute inset-0 border-2 border-green-500 rounded-lg opacity-60 group-hover:opacity-100 transition-all duration-300"></div>
@@ -119,6 +120,18 @@ const About: React.FC = () => (
               </div>
               <span className="mt-1 text-xs text-center block text-gray-400 group-hover:text-green-400 transition-colors duration-300">WhatsApp</span>
             </a>
+            <a href="https://x.com/Larrykin343" target="_blank" className="social-link group">
+              <div className="relative">
+                {/* Outer border */}
+                <div className="absolute inset-0 border-2 border-green-500 rounded-lg opacity-60 group-hover:opacity-100 transition-all duration-300"></div>
+                {/* Inner content with white border */}
+                <div className="relative m-0.5 flex items-center justify-center border border-white rounded-md bg-gray-900/50 p-2 group-hover:bg-gray-900 transition-all duration-300">
+                  <FaXTwitter className="text-green-400 group-hover:scale-110 transition-transform duration-300" size={20} />
+                </div>
+              </div>
+              <span className="mt-1 text-xs text-center block text-gray-400 group-hover:text-green-400 transition-colors duration-300">X</span>
+            </a>
+            
           </div>
           
           {/* Copyright */}

@@ -1,4 +1,5 @@
 import { Instagram, Twitter, Github } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 const Hero: React.FC = () => (
   <section className="relative md:h-[85vh] overflow-hidden md:pl-36 pt-10 md:pt-4 px-4 md:px-24 flex items-center">
     {/* Background decorative elements */}
@@ -84,7 +85,7 @@ const Hero: React.FC = () => (
             target="_blank"
             className="text-gray-400 hover:text-white transition-colors"
           >
-            <Twitter className="w-5 h-5" />
+            <FaXTwitter className="w-5 h-5" />
           </a>
           <a
             href="https://github.com/kinuthia-lawrence"
