@@ -92,7 +92,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                 } px-4 py-2 rounded-full w-full border border-white`}
               >
                 <GithubIcon className="w-4 h-4 mr-1" />
-                {project.codeLink === "#" ? "Coming Soon" : "Code"}
+                {project.codeLink === "#" ? "Coming Soon" : "Source Code"}
               </a>
             </div>
           )}
@@ -128,7 +128,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 const Projects: React.FC = () => (
   <section
     id="projects"
-    className="p-4 md:px-38 bg-black min-h-screen flex flex-col items-center justify-center"
+    className="p-4 lg:px-34 bg-black min-h-screen flex flex-col items-center justify-center"
   >
     <h2 className="text-3xl md:text-4xl flex  font-bold text-white mb-2">
       Featured Projects
@@ -144,7 +144,7 @@ const Projects: React.FC = () => (
       can find SOME of them in my github
     </p>
     <div className="px-16 h-px bg-gradient-to-r from-gray-500 via-white to-gray-500 my-8"></div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-16">
       {projects.map((project) => (
         <ProjectCard key={project.title} project={project} />
       ))}
