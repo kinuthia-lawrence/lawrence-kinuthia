@@ -4,8 +4,9 @@ import {
   MAX_TAGS_DISPLAY,
   projects,
   tagIcons,
-  type Project
+  type Project,
 } from "../data/ProjectsData";
+import LoadingThreeDotsJumping from "./LoadingThreeDotsJumping";
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   const displayTags = project.tags.slice(0, MAX_TAGS_DISPLAY);
@@ -78,10 +79,20 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
               <a
                 href={project.codeLink}
                 target="_blank"
-                className="text-white text-sm flex items-center justify-center bg-gray-800 px-4 py-2 rounded-full w-full border border-white hover:bg-gray-700"
+                rel="noreferrer"
+                onClick={(e) => {
+                  if (project.codeLink === "#") {
+                    e.preventDefault();
+                  }
+                }}
+                className={`text-white text-sm flex items-center justify-center ${
+                  project.codeLink === "#"
+                    ? "bg-gray-600 cursor-not-allowed"
+                    : "bg-gray-800 hover:bg-gray-700"
+                } px-4 py-2 rounded-full w-full border border-white`}
               >
                 <GithubIcon className="w-4 h-4 mr-1" />
-                Code
+                {project.codeLink === "#" ? "Coming Soon" : "Code"}
               </a>
             </div>
           )}
@@ -90,11 +101,21 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
               <a
                 href={project.liveLink}
                 target="_blank"
-                className="text-white flex items-center justify-center text-sm border border-white bg-green-600 px-4 py-2 rounded-full w-full hover:bg-green-500"
+                rel="noreferrer"
+                onClick={(e) => {
+                  if (project.liveLink === "#") {
+                    e.preventDefault();
+                  }
+                }}
+                className={`text-white flex items-center justify-center text-sm border border-white ${
+                  project.liveLink === "#"
+                    ? "bg-green-600 cursor-not-allowed"
+                    : "bg-green-500 hover:hover:bg-green-800"
+                }  px-4 py-2 rounded-full w-full `}
               >
                 {/* link icon */}
                 <Link className="w-4 h-4 mr-1" />
-                Live Demo
+                {project.liveLink === "#" ? "Coming Soon" : "Live Demo"}
               </a>
             </div>
           )}
@@ -127,6 +148,21 @@ const Projects: React.FC = () => (
       {projects.map((project) => (
         <ProjectCard key={project.title} project={project} />
       ))}
+    </div>
+    {/* Evolving section */}
+    <div className="mt-8 text-center">
+      <p className="text-green-400 font-mono text-sm sm:text-lg mb-6">
+        This section is evolving...
+        <span className="inline-block w-2 h-5 ml-1 bg-green-500 animate-blink"></span>
+      </p>
+
+      <div className="my-4">
+        <LoadingThreeDotsJumping />
+      </div>
+      <div className="mt-3 flex flex-col sm:flex-row items-center justify-center">
+        <p className="text-gray-600 ">More innovative projects</p>
+        <p className="text-gray-600 sm:pl-2">launching soon</p>
+      </div>
     </div>
   </section>
 );

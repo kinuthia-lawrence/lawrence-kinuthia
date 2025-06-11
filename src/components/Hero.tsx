@@ -1,4 +1,4 @@
-import { Instagram, Twitter, Github } from "lucide-react";
+import { Github, Instagram } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 const Hero: React.FC = () => (
   <section className="relative md:h-[85vh] overflow-hidden md:pl-36 pt-10 md:pt-4 px-4 md:px-24 flex items-center">

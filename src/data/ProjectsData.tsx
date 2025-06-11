@@ -23,6 +23,7 @@ import {
   SiTailwindcss,
   SiXml,
   SiJetpackcompose,
+  SiSqlite,
 } from "react-icons/si";
 
 export interface Project {
@@ -64,6 +65,7 @@ export const tagIcons: Record<string, ReactElement> = {
   PostgreSQL: <SiPostgresql className="text-blue-500" />,
   Firebase: <SiFirebase className="text-yellow-500" />,
   GraphQL: <SiGraphql className="text-pink-500" />,
+  Sqlite: <SiSqlite className="text-blue-500" />,
 
   // Others
   Docker: <FaDocker className="text-blue-400" />,
@@ -77,49 +79,64 @@ export const MAX_TAGS_DISPLAY = 3;
 
 export const projects: Project[] = [
   {
-    title: "SnapTap 1",
+    title: "SnapTap",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    tags: ["Java", "Javafx", "Fxml", "Java", "Javafx", "Java", "Javafx"],
+      "A lightweight desktop application that enhances productivity by managing custom hotkeys for quick access to frequently used applications, directories, files, and websites. Features a responsive and modern UI experience.",
+    tags: ["Java", "Javafx", "CSS", "Fxml"],
     year: "2025",
     status: "live",
-    coverImage: "/Backgroundless.png",
-    hoverLabel: "Hotkey Manager Platform",
+    coverImage: "/snaptap.png",
+    hoverLabel: "Desktop Hotkey Manager Platform",
     liveLink: "#",
-    codeLink: "#",
+    codeLink: "https://github.com/kinuthia-lawrence/SnapTap",
   },
   {
-    title: "SnapTap 2",
+    title: "Cywotek",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    tags: ["Java2", "Javafx2", "Java2", "Javafx2", "Java2", "Javafx2"],
+      "A modern web platform for Cyber World Techies Kenya, providing technology services and professional training. Features responsive design, service showcases, and course enrollment capabilities for tech enthusiasts and businesses.",
+    tags: ["TypeScript", "React", "Tailwind"],
     year: "2025",
     status: "development",
-    coverImage: "/snaptap2.png",
-    hoverLabel: "Desktop Hotkey Manager App",
+    coverImage: "/cywotek.png",
+    hoverLabel: "Cyber World Techies Kenya Website",
+    liveLink: "https://cywotek.vercel.app/",
     codeLink: "#",
   },
   {
-    title: "SnapTap 1",
+    title: "Solid Book Scraper",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    tags: ["Java", "Javafx", "Fxml", "Java", "Javafx", "Java", "Javafx"],
+      "A powerful desktop application designed to efficiently extract and organize information from online sources. Features an intuitive interface for configuring search parameters, automated data extraction, and export capabilities to various formats.",
+    tags: ["Java", "Javafx", "Node.js", "CSS", "Fxml"],
     year: "2025",
     status: "live",
-    coverImage: "/Backgroundless.png",
-    hoverLabel: "Hotkey Manager Platform",
+    coverImage: "/booksolidscraper.png",
+    hoverLabel: "A Desktop Web Scraper Application",
     liveLink: "#",
-    codeLink: "#",
+    codeLink: "https://github.com/kinuthia-lawrence/gmapscrapper",
   },
   {
-    title: "SnapTap 2",
+    title: "Point of Sale",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    tags: ["Java2", "Javafx2", "Java2", "Javafx2", "Java2", "Javafx2"],
+      "A comprehensive retail management system designed for small to medium businesses to process transactions, track inventory, and generate sales reports. Features an intuitive interface, secure payment processing, and reliable local data storage.",
+    tags: ["Java", "Javafx", "CSS", "Fxml", "Sqlite"],
+    year: "2024",
+    status: "live",
+    coverImage: "/jelpspos.png",
+    hoverLabel: "Desktop Point of Sale Application",
+    liveLink: "#",
+    codeLink:
+      "https://github.com/kinuthia-lawrence/JepsChemistPos/blob/master/README.md",
+  },
+  {
+    title: "Notification Hub",
+    description:
+      "A specialized Android notification manager that overrides the default system to provide granular control over alerts. Features custom sounds, app-specific volume settings, priority filtering, and selective Do Not Disturb override capabilities for critical applications.",
+    tags: ["Kotlin", "Jetpack Compose", "Firebase"],
     year: "2025",
     status: "development",
-    coverImage: "/snaptap2.png",
-    hoverLabel: "Desktop Hotkey Manager App",
-    codeLink: "#",
+    coverImage: "/notificationhub.jpg",
+    hoverLabel: "Android Notification Manager Application",
+    liveLink: "#",
+    codeLink: "https://github.com/kinuthia-lawrence/NotificaitonHub",
   },
 ];
