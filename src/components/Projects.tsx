@@ -75,7 +75,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           `}
         >
           {project.codeLink && (
-            <div className="border border-green-800 flex items-center justify-center p-0.5 w-full rounded-full">
+            <div className="border border-green-800 w-full rounded-full p-0.5 h-[42px]">
               <a
                 href={project.codeLink}
                 target="_blank"
@@ -85,19 +85,19 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                     e.preventDefault();
                   }
                 }}
-                className={`text-white text-sm flex items-center justify-center ${
+                className={`text-white text-xs sm:text-sm flex items-center justify-center h-full ${
                   project.codeLink === "#"
                     ? "bg-gray-600 cursor-not-allowed"
                     : "bg-gray-800 hover:bg-gray-700"
-                } px-4 py-2 rounded-full w-full border border-white`}
+                } px-3 sm:px-4 rounded-full w-full border border-white whitespace-nowrap`}
               >
-                <GithubIcon className="w-4 h-4 mr-1" />
-                {project.codeLink === "#" ? "Coming Soon" : "Source Code"}
+                <GithubIcon className="w-4 h-4 mr-1 flex-shrink-0" />
+                {project.codeLink === "#" ? " Coming Soon " : "Source Code"}
               </a>
             </div>
           )}
           {project.liveLink && (
-            <div className="flex items-center justify-center p-0.5 w-full rounded-full border border-green-800">
+            <div className="border border-green-800 w-full rounded-full p-0.5 h-[42px]">
               <a
                 href={project.liveLink}
                 target="_blank"
@@ -107,14 +107,14 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                     e.preventDefault();
                   }
                 }}
-                className={`text-white flex items-center justify-center text-sm border border-white ${
+                className={`text-white text-xs sm:text-sm flex items-center justify-center h-full ${
                   project.liveLink === "#"
                     ? "bg-green-600 cursor-not-allowed"
                     : "bg-green-500 hover:hover:bg-green-800"
-                }  px-4 py-2 rounded-full w-full `}
+                } px-3  sm:px-4 rounded-full w-full whitespace-nowrap`}
               >
                 {/* link icon */}
-                <Link className="w-4 h-4 mr-1" />
+                <Link className="w-4 h-4 mr-1 flex-shrink-0" />
                 {project.liveLink === "#" ? "Coming Soon" : "Live Demo"}
               </a>
             </div>
@@ -143,8 +143,8 @@ const Projects: React.FC = () => (
       confidentiality. Fiverr and Upwork projects are not included here, but you
       can find SOME of them in my github
     </p>
-    <div className="px-16 h-px bg-gradient-to-r from-gray-500 via-white to-gray-500 my-8"></div>
-    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-16">
+    <div className="px-16 h-px bg-gradient-to-r from-black via-white to-black my-8"></div>
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:gap-16">
       {projects.map((project) => (
         <ProjectCard key={project.title} project={project} />
       ))}
