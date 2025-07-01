@@ -139,4 +139,30 @@ export const projects: Project[] = [
     liveLink: "#",
     codeLink: "https://github.com/kinuthia-lawrence/NotificaitonHub",
   },
+  {
+  title: "FLEXBYTE ERP",
+  description:
+    "A multi-tenant ERP and POS system designed for SMEs, featuring modules for inventory, HR, and accounting. Built with Laravel and React, it includes secure authentication, advanced reporting, and real-time data tracking.",
+  tags: ["Laravel", "React", "MySQL", "Docker"],
+  year: "2024",
+  status: "development",
+  coverImage: "/flexbyte.png",
+  hoverLabel: "Multi-Tenant ERP and POS System",
+  liveLink: "#",
+  codeLink: "#",
+},
+{
+  title: "Smart WiFi",
+  description:
+    "A multi-tenant WiFi hotspot management system for ISPs. Built with Spring Boot and React, it supports device whitelisting, usage tracking, billing integration, and role-based access in a Dockerized cloud environment.",
+  tags: ["Spring Boot", "React", "Docker", "PostgreSQL"],
+  year: "2025",
+  status: "development",
+  coverImage: "/smart-wifi.png",
+  hoverLabel: "WiFi Hotspot Billing and Analytics System",
+  liveLink: "https://smart-wifi-pi.vercel.app/",
+  codeLink: "#",
+}
+
+
 ];
