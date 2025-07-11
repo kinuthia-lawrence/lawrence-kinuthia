@@ -162,6 +162,18 @@ export const projects: Project[] = [
   hoverLabel: "WiFi Hotspot Billing and Analytics System",
   liveLink: "https://smart-wifi-pi.vercel.app/",
   codeLink: "#",
+},
+{
+  title: "Cywotek Data",
+  description:
+    "A comprehensive customer and debt management system for businesses. Built with SvelteKit and MongoDB, it features customer profiling, debt tracking, payment management, and role-based access control with real-time analytics and reporting.",
+  tags: ["SvelteKit", "TypeScript", "MongoDB", "TailwindCSS"],
+  year: "2025", 
+  status: "live",
+  coverImage: "/cywotek-data.png",
+  hoverLabel: "Customer & Debt Management System",
+  liveLink: "#",
+  codeLink: "#",
 }
 
 
